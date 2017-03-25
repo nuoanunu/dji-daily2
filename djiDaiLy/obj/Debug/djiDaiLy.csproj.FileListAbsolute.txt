@@ -1,0 +1,164 @@
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\ApplicationInsights.config
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\csc.exe
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\System.Collections.Immutable.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\vbc.exe
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\VBCSCompiler.exe
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\roslyn\VBCSCompiler.exe.config
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\djiDaiLy.dll.config
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\djiDaiLy.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\djiDaiLy.pdb
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Antlr3.Runtime.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\EntityFramework.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\EntityFramework.SqlServer.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.Web.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.WindowsServer.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.ApplicationInsights.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Google.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Web.Infrastructure.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Newtonsoft.Json.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Owin.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Helpers.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Mvc.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Optimization.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Razor.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.Deployment.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.Razor.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\WebGrease.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.Web.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AI.WindowsServer.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.ApplicationInsights.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Helpers.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Mvc.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Optimization.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.Razor.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.Deployment.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\System.Web.WebPages.Razor.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Antlr3.Runtime.pdb
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Newtonsoft.Json.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\EntityFramework.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\EntityFramework.SqlServer.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Google.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\obj\Debug\djiDaiLy.csprojResolveAssemblyReference.cache
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\obj\Debug\djiDaiLy.dll
+c:\users\nhatvhn\documents\visual studio 2015\Projects\djiDaiLy\djiDaiLy\obj\Debug\djiDaiLy.pdb
+D:\DJIDAILY\djiDaiLy\bin\ApplicationInsights.config
+D:\DJIDAILY\djiDaiLy\bin\roslyn\csc.exe
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DJIDAILY\djiDaiLy\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DJIDAILY\djiDaiLy\bin\roslyn\System.Collections.Immutable.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\System.Reflection.Metadata.dll
+D:\DJIDAILY\djiDaiLy\bin\roslyn\vbc.exe
+D:\DJIDAILY\djiDaiLy\bin\roslyn\VBCSCompiler.exe
+D:\DJIDAILY\djiDaiLy\bin\roslyn\VBCSCompiler.exe.config
+D:\DJIDAILY\djiDaiLy\bin\djiDaiLy.dll.config
+D:\DJIDAILY\djiDaiLy\bin\djiDaiLy.dll
+D:\DJIDAILY\djiDaiLy\bin\djiDaiLy.pdb
+D:\DJIDAILY\djiDaiLy\bin\Antlr3.Runtime.dll
+D:\DJIDAILY\djiDaiLy\bin\EntityFramework.dll
+D:\DJIDAILY\djiDaiLy\bin\EntityFramework.SqlServer.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.Agent.Intercept.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.DependencyCollector.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.Web.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.WindowsServer.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.ApplicationInsights.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.Core.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Cookies.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Facebook.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Google.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.OAuth.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Twitter.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Web.Infrastructure.dll
+D:\DJIDAILY\djiDaiLy\bin\Newtonsoft.Json.dll
+D:\DJIDAILY\djiDaiLy\bin\Owin.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Helpers.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Mvc.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Optimization.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Razor.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.Deployment.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.dll
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.Razor.dll
+D:\DJIDAILY\djiDaiLy\bin\WebGrease.dll
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.DependencyCollector.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.Web.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AI.WindowsServer.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.ApplicationInsights.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Helpers.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Mvc.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Optimization.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.Razor.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.Deployment.xml
+D:\DJIDAILY\djiDaiLy\bin\System.Web.WebPages.Razor.xml
+D:\DJIDAILY\djiDaiLy\bin\Antlr3.Runtime.pdb
+D:\DJIDAILY\djiDaiLy\bin\Newtonsoft.Json.xml
+D:\DJIDAILY\djiDaiLy\bin\EntityFramework.xml
+D:\DJIDAILY\djiDaiLy\bin\EntityFramework.SqlServer.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.Core.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Facebook.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Cookies.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.OAuth.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Google.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.Twitter.xml
+D:\DJIDAILY\djiDaiLy\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\DJIDAILY\djiDaiLy\obj\Debug\djiDaiLy.csprojResolveAssemblyReference.cache
+D:\DJIDAILY\djiDaiLy\obj\Debug\djiDaiLy.dll
+D:\DJIDAILY\djiDaiLy\obj\Debug\djiDaiLy.pdb

@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThienNgaDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="accountOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="roleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="role" Relationship="Self.FK_account_role" FromRole="account" ToRole="role" />
+  </EntityType>
+  <EntityType Name="ActivityType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_tb_warranty_activities_ActivityType" FromRole="ActivityType" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="DiemKyThuats" Relationship="Self.FK_DiemKyThuat_AspNetUsers" FromRole="AspNetUsers" ToRole="DiemKyThuat" />
+    <NavigationProperty Name="logs" Relationship="Self.FK_log_AspNetUsers" FromRole="AspNetUsers" ToRole="log" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_AspNetUsers" FromRole="AspNetUsers" ToRole="NhanVien" />
+    <NavigationProperty Name="RequestMuons" Relationship="Self.FK_RequestMuon_AspNetUsers" FromRole="AspNetUsers" ToRole="RequestMuon" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_tb_warranty_activities_AspNetUsers" FromRole="AspNetUsers" ToRole="tb_warranty_activities" />
+    <NavigationProperty Name="tb_warranty_activities1" Relationship="Self.FK_tb_warranty_activities_AspNetUsers1" FromRole="AspNetUsers" ToRole="tb_warranty_activities" />
+    <NavigationProperty Name="ThongBaoMois" Relationship="Self.FK_ThongBaoMoi_AspNetUsers" FromRole="AspNetUsers" ToRole="ThongBaoMoi" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="CustomerType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTaChinhSach" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="items" Relationship="Self.FK_item_CustomerType" FromRole="CustomerType" ToRole="item" />
+    <NavigationProperty Name="tb_customer" Relationship="Self.FK_tb_customer_CustomerType" FromRole="CustomerType" ToRole="tb_customer" />
+  </EntityType>
+  <EntityType Name="DiemKyThuat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Point" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="userID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="actid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_DiemKyThuat_AspNetUsers" FromRole="DiemKyThuat" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HangBaoHanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="wactID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_HangBaoHanh_tb_warranty_activities" FromRole="HangBaoHanh" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productStoreCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="productFactoryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="inventoryID" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="Incoming" Type="Int32" />
+    <Property Name="DateOrdered" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tb_inventory_name" Relationship="Self.FK_inventory_tb_inventory_name" FromRole="inventory" ToRole="tb_inventory_name" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="productDetailID" Type="Int32" Nullable="false" />
+    <Property Name="inventoryID" Type="Int32" Nullable="false" />
+    <Property Name="customerID" Type="Int32" />
+    <Property Name="DateOfSold" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="orderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerType" Type="Int32" />
+    <Property Name="warrantyAvailable" Type="Boolean" />
+    <Property Name="tempname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Verified" Type="Boolean" />
+    <NavigationProperty Name="CustomerType1" Relationship="Self.FK_item_CustomerType" FromRole="item" ToRole="CustomerType" />
+    <NavigationProperty Name="order" Relationship="Self.FK_item_order" FromRole="item" ToRole="order" />
+    <NavigationProperty Name="tb_customer" Relationship="Self.FK_item_tb_customer" FromRole="item" ToRole="tb_customer" />
+    <NavigationProperty Name="tb_inventory_name" Relationship="Self.FK_item_tb_inventory_name" FromRole="item" ToRole="tb_inventory_name" />
+    <NavigationProperty Name="tb_product_detail" Relationship="Self.FK_item_tb_product_detail" FromRole="item" ToRole="tb_product_detail" />
+    <NavigationProperty Name="tb_warranty" Relationship="Self.FK_tb_warranty_item" FromRole="item" ToRole="tb_warranty" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="warrantyActivitiesID" Type="Int32" Nullable="false" />
+    <Property Name="action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="account" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_log_AspNetUsers" FromRole="log" ToRole="AspNetUsers" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_log_tb_warranty_activities" FromRole="log" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="employeeAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="employeeemail" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="employeePhone" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="accountID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_NhanVien_AspNetUsers" FromRole="NhanVien" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="Int32" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="total" Type="Double" Nullable="false" />
+    <Property Name="MaBill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vat" Type="Boolean" />
+    <Property Name="aftervat" Type="Double" />
+    <NavigationProperty Name="items" Relationship="Self.FK_item_order" FromRole="order" ToRole="item" />
+    <NavigationProperty Name="tb_customer" Relationship="Self.FK_order_tb_customer" FromRole="order" ToRole="tb_customer" />
+    <NavigationProperty Name="orderDetails" Relationship="Self.FK_orderDetail_order" FromRole="order" ToRole="orderDetail" />
+  </EntityType>
+  <EntityType Name="orderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productDetailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChietKhauPhanTram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChietKhauTrucTiep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="orderID" Type="Int32" Nullable="false" />
+    <Property Name="DonGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThanhTien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TempName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuiCach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="warrantyAvailable" Type="Boolean" />
+    <NavigationProperty Name="order" Relationship="Self.FK_orderDetail_order" FromRole="orderDetail" ToRole="order" />
+  </EntityType>
+  <EntityType Name="RequestMuon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productID" Type="Int32" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="creator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="recieveDate" Type="DateTime" Precision="3" />
+    <Property Name="returnDate" Type="DateTime" Precision="3" />
+    <Property Name="TemporaryName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="warrantyID" Type="Int32" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_RequestMuon_AspNetUsers" FromRole="RequestMuon" ToRole="AspNetUsers" />
+    <NavigationProperty Name="RequestStatu" Relationship="Self.FK_RequestMuon_RequestStatus1" FromRole="RequestMuon" ToRole="RequestStatus" />
+    <NavigationProperty Name="tb_product_detail" Relationship="Self.FK_RequestMuon_tb_product_detail" FromRole="RequestMuon" ToRole="tb_product_detail" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_RequestMuon_tb_warranty_activities" FromRole="RequestMuon" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="RequestStatu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RequestMuons" Relationship="Self.FK_RequestMuon_RequestStatus1" FromRole="RequestStatus" ToRole="RequestMuon" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="Int32" Nullable="false" />
+    <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="accounts" Relationship="Self.FK_account_role" FromRole="role" ToRole="account" />
+  </EntityType>
+  <EntityType Name="tb_cate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_product_detail" Relationship="Self.FK_tb_product_detail_tb_cate" FromRole="tb_cate" ToRole="tb_product_detail" />
+  </EntityType>
+  <EntityType Name="tb_customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phonenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="CustomerType" Relationship="Self.FK_tb_customer_CustomerType" FromRole="tb_customer" ToRole="CustomerType" />
+    <NavigationProperty Name="items" Relationship="Self.FK_item_tb_customer" FromRole="tb_customer" ToRole="item" />
+    <NavigationProperty Name="orders" Relationship="Self.FK_order_tb_customer" FromRole="tb_customer" ToRole="order" />
+  </EntityType>
+  <EntityType Name="tb_inventory_name">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="InventoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="inventories" Relationship="Self.FK_inventory_tb_inventory_name" FromRole="tb_inventory_name" ToRole="inventory" />
+    <NavigationProperty Name="items" Relationship="Self.FK_item_tb_inventory_name" FromRole="tb_inventory_name" ToRole="item" />
+  </EntityType>
+  <EntityType Name="tb_product_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="producFactoryID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="productStoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="productName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="cateID" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="minThresHold" Type="Int32" />
+    <Property Name="addedDate" Type="DateTime" Precision="3" />
+    <Property Name="lastUpdate" Type="DateTime" Precision="3" />
+    <Property Name="Quicach" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraField1" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraField2" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraField3" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraField4" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="items" Relationship="Self.FK_item_tb_product_detail" FromRole="tb_product_detail" ToRole="item" />
+    <NavigationProperty Name="RequestMuons" Relationship="Self.FK_RequestMuon_tb_product_detail" FromRole="tb_product_detail" ToRole="RequestMuon" />
+    <NavigationProperty Name="tb_cate" Relationship="Self.FK_tb_product_detail_tb_cate" FromRole="tb_product_detail" ToRole="tb_cate" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_tb_warranty_activities_tb_product_detail" FromRole="tb_product_detail" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="tb_warranty">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="warrantyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemID" Type="Int32" Nullable="false" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="duration" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaChinh" Type="Boolean" Nullable="false" />
+    <Property Name="Special" Type="Int32" />
+    <NavigationProperty Name="item" Relationship="Self.FK_tb_warranty_item" FromRole="tb_warranty" ToRole="item" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_tb_warranty_activities_tb_warranty" FromRole="tb_warranty" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="tb_warranty_activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="employee" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="warrantyID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="realeaseDATE" Type="DateTime" Precision="0" />
+    <Property Name="itemID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="finishFixingDate" Type="DateTime" Precision="0" />
+    <Property Name="empFixer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CodeBaoHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKhach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="productDetailID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <NavigationProperty Name="ActivityType" Relationship="Self.FK_tb_warranty_activities_ActivityType" FromRole="tb_warranty_activities" ToRole="ActivityType" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_tb_warranty_activities_AspNetUsers" FromRole="tb_warranty_activities" ToRole="AspNetUsers" />
+    <NavigationProperty Name="AspNetUser1" Relationship="Self.FK_tb_warranty_activities_AspNetUsers1" FromRole="tb_warranty_activities" ToRole="AspNetUsers" />
+    <NavigationProperty Name="HangBaoHanhs" Relationship="Self.FK_HangBaoHanh_tb_warranty_activities" FromRole="tb_warranty_activities" ToRole="HangBaoHanh" />
+    <NavigationProperty Name="logs" Relationship="Self.FK_log_tb_warranty_activities" FromRole="tb_warranty_activities" ToRole="log" />
+    <NavigationProperty Name="RequestMuons" Relationship="Self.FK_RequestMuon_tb_warranty_activities" FromRole="tb_warranty_activities" ToRole="RequestMuon" />
+    <NavigationProperty Name="tb_product_detail" Relationship="Self.FK_tb_warranty_activities_tb_product_detail" FromRole="tb_warranty_activities" ToRole="tb_product_detail" />
+    <NavigationProperty Name="tb_warranty" Relationship="Self.FK_tb_warranty_activities_tb_warranty" FromRole="tb_warranty_activities" ToRole="tb_warranty" />
+    <NavigationProperty Name="tb_warrnaty_status" Relationship="Self.FK_tb_warranty_activities_tb_warrnaty_status" FromRole="tb_warranty_activities" ToRole="tb_warrnaty_status" />
+    <NavigationProperty Name="warrantyActivityFees" Relationship="Self.FK_warrantyActivityFee_tb_warranty_activities" FromRole="tb_warranty_activities" ToRole="warrantyActivityFee" />
+    <NavigationProperty Name="warrantyActivityFixingFees" Relationship="Self.FK_warrantyActivityFixingFee_tb_warranty_activities" FromRole="tb_warranty_activities" ToRole="warrantyActivityFixingFee" />
+  </EntityType>
+  <EntityType Name="tb_warrnaty_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="statusName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_tb_warranty_activities_tb_warrnaty_status" FromRole="tb_warrnaty_status" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="ThongBaoMoi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reciever" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Confirmed" Type="Boolean" Nullable="false" />
+    <Property Name="hreflink" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_ThongBaoMoi_AspNetUsers" FromRole="ThongBaoMoi" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="warrantyActivityFee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="activityID" Type="Int32" Nullable="false" />
+    <Property Name="fixingfee" Type="Double" Nullable="false" />
+    <Property Name="active" Type="Boolean" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_warrantyActivityFee_tb_warranty_activities" FromRole="warrantyActivityFee" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <EntityType Name="warrantyActivityFixingFee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FixDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fee" Type="Double" Nullable="false" />
+    <Property Name="activityID" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Boolean" />
+    <NavigationProperty Name="tb_warranty_activities" Relationship="Self.FK_warrantyActivityFixingFee_tb_warranty_activities" FromRole="warrantyActivityFixingFee" ToRole="tb_warranty_activities" />
+  </EntityType>
+  <Association Name="FK_account_role">
+    <End Role="role" Type="Self.role" Multiplicity="1" />
+    <End Role="account" Type="Self.account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="account">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_ActivityType">
+    <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="0..1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiemKyThuat_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="DiemKyThuat" Type="Self.DiemKyThuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DiemKyThuat">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="log" Type="Self.log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="log">
+        <PropertyRef Name="account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestMuon_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="RequestMuon" Type="Self.RequestMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RequestMuon">
+        <PropertyRef Name="creator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_AspNetUsers1">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="empFixer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongBaoMoi_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1" />
+    <End Role="ThongBaoMoi" Type="Self.ThongBaoMoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ThongBaoMoi">
+        <PropertyRef Name="Reciever" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_item_CustomerType">
+    <End Role="CustomerType" Type="Self.CustomerType" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="CustomerType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_customer_CustomerType">
+    <End Role="CustomerType" Type="Self.CustomerType" Multiplicity="0..1" />
+    <End Role="tb_customer" Type="Self.tb_customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_customer">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HangBaoHanh_tb_warranty_activities">
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="1" />
+    <End Role="HangBaoHanh" Type="Self.HangBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty_activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HangBaoHanh">
+        <PropertyRef Name="wactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventory_tb_inventory_name">
+    <End Role="tb_inventory_name" Type="Self.tb_inventory_name" Multiplicity="1" />
+    <End Role="inventory" Type="Self.inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_inventory_name">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="inventory">
+        <PropertyRef Name="inventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_item_order">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_item_tb_customer">
+    <End Role="tb_customer" Type="Self.tb_customer" Multiplicity="0..1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_item_tb_inventory_name">
+    <End Role="tb_inventory_name" Type="Self.tb_inventory_name" Multiplicity="1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_inventory_name">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="inventoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_item_tb_product_detail">
+    <End Role="tb_product_detail" Type="Self.tb_product_detail" Multiplicity="1" />
+    <End Role="item" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_product_detail">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item">
+        <PropertyRef Name="productDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_item">
+    <End Role="item" Type="Self.item" Multiplicity="1" />
+    <End Role="tb_warranty" Type="Self.tb_warranty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_warranty">
+        <PropertyRef Name="itemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_tb_warranty_activities">
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="1" />
+    <End Role="log" Type="Self.log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty_activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log">
+        <PropertyRef Name="warrantyActivitiesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_tb_customer">
+    <End Role="tb_customer" Type="Self.tb_customer" Multiplicity="0..1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderDetail_order">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="orderDetail" Type="Self.orderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orderDetail">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestMuon_RequestStatus1">
+    <End Role="RequestStatus" Type="Self.RequestStatu" Multiplicity="1" />
+    <End Role="RequestMuon" Type="Self.RequestMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RequestMuon">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestMuon_tb_product_detail">
+    <End Role="tb_product_detail" Type="Self.tb_product_detail" Multiplicity="0..1" />
+    <End Role="RequestMuon" Type="Self.RequestMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_product_detail">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RequestMuon">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestMuon_tb_warranty_activities">
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="0..1" />
+    <End Role="RequestMuon" Type="Self.RequestMuon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty_activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RequestMuon">
+        <PropertyRef Name="warrantyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_product_detail_tb_cate">
+    <End Role="tb_cate" Type="Self.tb_cate" Multiplicity="0..1" />
+    <End Role="tb_product_detail" Type="Self.tb_product_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cate">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_product_detail">
+        <PropertyRef Name="cateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_tb_product_detail">
+    <End Role="tb_product_detail" Type="Self.tb_product_detail" Multiplicity="0..1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_product_detail">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="productDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_tb_warranty">
+    <End Role="tb_warranty" Type="Self.tb_warranty" Multiplicity="0..1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="warrantyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_warranty_activities_tb_warrnaty_status">
+    <End Role="tb_warrnaty_status" Type="Self.tb_warrnaty_status" Multiplicity="1" />
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warrnaty_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_warranty_activities">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_warrantyActivityFee_tb_warranty_activities">
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="1" />
+    <End Role="warrantyActivityFee" Type="Self.warrantyActivityFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty_activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="warrantyActivityFee">
+        <PropertyRef Name="activityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_warrantyActivityFixingFee_tb_warranty_activities">
+    <End Role="tb_warranty_activities" Type="Self.tb_warranty_activities" Multiplicity="1" />
+    <End Role="warrantyActivityFixingFee" Type="Self.warrantyActivityFixingFee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_warranty_activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="warrantyActivityFixingFee">
+        <PropertyRef Name="activityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ThienNgaDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accounts" EntityType="Self.account" />
+    <EntitySet Name="ActivityTypes" EntityType="Self.ActivityType" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="CustomerTypes" EntityType="Self.CustomerType" />
+    <EntitySet Name="DiemKyThuats" EntityType="Self.DiemKyThuat" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="HangBaoHanhs" EntityType="Self.HangBaoHanh" />
+    <EntitySet Name="inventories" EntityType="Self.inventory" />
+    <EntitySet Name="items" EntityType="Self.item" />
+    <EntitySet Name="logs" EntityType="Self.log" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+    <EntitySet Name="orderDetails" EntityType="Self.orderDetail" />
+    <EntitySet Name="RequestMuons" EntityType="Self.RequestMuon" />
+    <EntitySet Name="RequestStatus" EntityType="Self.RequestStatu" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="tb_cate" EntityType="Self.tb_cate" />
+    <EntitySet Name="tb_customer" EntityType="Self.tb_customer" />
+    <EntitySet Name="tb_inventory_name" EntityType="Self.tb_inventory_name" />
+    <EntitySet Name="tb_product_detail" EntityType="Self.tb_product_detail" />
+    <EntitySet Name="tb_warranty" EntityType="Self.tb_warranty" />
+    <EntitySet Name="tb_warranty_activities" EntityType="Self.tb_warranty_activities" />
+    <EntitySet Name="tb_warrnaty_status" EntityType="Self.tb_warrnaty_status" />
+    <EntitySet Name="ThongBaoMois" EntityType="Self.ThongBaoMoi" />
+    <EntitySet Name="warrantyActivityFees" EntityType="Self.warrantyActivityFee" />
+    <EntitySet Name="warrantyActivityFixingFees" EntityType="Self.warrantyActivityFixingFee" />
+    <AssociationSet Name="FK_account_role" Association="Self.FK_account_role">
+      <End Role="role" EntitySet="roles" />
+      <End Role="account" EntitySet="accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_ActivityType" Association="Self.FK_tb_warranty_activities_ActivityType">
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiemKyThuat_AspNetUsers" Association="Self.FK_DiemKyThuat_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="DiemKyThuat" EntitySet="DiemKyThuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_AspNetUsers" Association="Self.FK_log_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="log" EntitySet="logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_AspNetUsers" Association="Self.FK_NhanVien_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestMuon_AspNetUsers" Association="Self.FK_RequestMuon_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="RequestMuon" EntitySet="RequestMuons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_AspNetUsers" Association="Self.FK_tb_warranty_activities_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_AspNetUsers1" Association="Self.FK_tb_warranty_activities_AspNetUsers1">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThongBaoMoi_AspNetUsers" Association="Self.FK_ThongBaoMoi_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="ThongBaoMoi" EntitySet="ThongBaoMois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_item_CustomerType" Association="Self.FK_item_CustomerType">
+      <End Role="CustomerType" EntitySet="CustomerTypes" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_customer_CustomerType" Association="Self.FK_tb_customer_CustomerType">
+      <End Role="CustomerType" EntitySet="CustomerTypes" />
+      <End Role="tb_customer" EntitySet="tb_customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HangBaoHanh_tb_warranty_activities" Association="Self.FK_HangBaoHanh_tb_warranty_activities">
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+      <End Role="HangBaoHanh" EntitySet="HangBaoHanhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventory_tb_inventory_name" Association="Self.FK_inventory_tb_inventory_name">
+      <End Role="tb_inventory_name" EntitySet="tb_inventory_name" />
+      <End Role="inventory" EntitySet="inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_item_order" Association="Self.FK_item_order">
+      <End Role="order" EntitySet="orders" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_item_tb_customer" Association="Self.FK_item_tb_customer">
+      <End Role="tb_customer" EntitySet="tb_customer" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_item_tb_inventory_name" Association="Self.FK_item_tb_inventory_name">
+      <End Role="tb_inventory_name" EntitySet="tb_inventory_name" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_item_tb_product_detail" Association="Self.FK_item_tb_product_detail">
+      <End Role="tb_product_detail" EntitySet="tb_product_detail" />
+      <End Role="item" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_item" Association="Self.FK_tb_warranty_item">
+      <End Role="item" EntitySet="items" />
+      <End Role="tb_warranty" EntitySet="tb_warranty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_tb_warranty_activities" Association="Self.FK_log_tb_warranty_activities">
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+      <End Role="log" EntitySet="logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_tb_customer" Association="Self.FK_order_tb_customer">
+      <End Role="tb_customer" EntitySet="tb_customer" />
+      <End Role="order" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderDetail_order" Association="Self.FK_orderDetail_order">
+      <End Role="order" EntitySet="orders" />
+      <End Role="orderDetail" EntitySet="orderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestMuon_RequestStatus1" Association="Self.FK_RequestMuon_RequestStatus1">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="RequestMuon" EntitySet="RequestMuons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestMuon_tb_product_detail" Association="Self.FK_RequestMuon_tb_product_detail">
+      <End Role="tb_product_detail" EntitySet="tb_product_detail" />
+      <End Role="RequestMuon" EntitySet="RequestMuons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestMuon_tb_warranty_activities" Association="Self.FK_RequestMuon_tb_warranty_activities">
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+      <End Role="RequestMuon" EntitySet="RequestMuons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_product_detail_tb_cate" Association="Self.FK_tb_product_detail_tb_cate">
+      <End Role="tb_cate" EntitySet="tb_cate" />
+      <End Role="tb_product_detail" EntitySet="tb_product_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_tb_product_detail" Association="Self.FK_tb_warranty_activities_tb_product_detail">
+      <End Role="tb_product_detail" EntitySet="tb_product_detail" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_tb_warranty" Association="Self.FK_tb_warranty_activities_tb_warranty">
+      <End Role="tb_warranty" EntitySet="tb_warranty" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_warranty_activities_tb_warrnaty_status" Association="Self.FK_tb_warranty_activities_tb_warrnaty_status">
+      <End Role="tb_warrnaty_status" EntitySet="tb_warrnaty_status" />
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_warrantyActivityFee_tb_warranty_activities" Association="Self.FK_warrantyActivityFee_tb_warranty_activities">
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+      <End Role="warrantyActivityFee" EntitySet="warrantyActivityFees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_warrantyActivityFixingFee_tb_warranty_activities" Association="Self.FK_warrantyActivityFixingFee_tb_warranty_activities">
+      <End Role="tb_warranty_activities" EntitySet="tb_warranty_activities" />
+      <End Role="warrantyActivityFixingFee" EntitySet="warrantyActivityFixingFees" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
