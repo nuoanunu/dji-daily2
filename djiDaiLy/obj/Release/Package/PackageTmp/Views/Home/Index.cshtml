@@ -1,0 +1,149 @@
+﻿
+
+<section class="wrapper">
+
+    <div class="row">
+        <div class="col-lg-9 main-chart">
+
+            <div class="row mtbox">
+                <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
+                    <div class="box1">
+                        <span class="li_heart"></span>
+                        <h3>@ViewData["tongsanphamdckichhoat"]</h3>
+                    </div>
+                    <p>Tổng sản phẩm được kích hoạt</p>
+                </div>
+                <div class="col-md-2 col-sm-2 box0">
+                    <div class="box1">
+                        <span class="li_cloud"></span>
+                        <h3>@ViewData["tongsanphamdckichhoatthangnay"]</h3>
+                    </div>
+                    <p>Tổng sản phẩm được kích hoạt tháng này</p>
+                </div>
+                <div class="col-md-2 col-sm-2 box0">
+                    <div class="box1">
+                        <span class="li_stack"></span>
+                        <h3>@ViewData["sosanphamchuaduockichhoat"]</h3>
+                    </div>
+                    <p>Số sản phẩm chưa kích hoạt</p>
+                </div>
+                <div class="col-md-2 col-sm-2 box0">
+                    <div class="box1">
+                        <span class="li_news"></span>
+                        <h3>@ViewData["sosanphamcsaphethan"]</h3>
+                    </div>
+                    <p>Sản phẩm sắp hết hạn.</p>
+                </div>
+                <div class="col-md-2 col-sm-2 box0">
+                    <div class="box1">
+                        <span class="li_data"></span>
+                        <h3>OK!</h3>
+                    </div>
+                    <p>Bảo hành kho!.</p>
+                </div>
+              
+
+            </div><!-- /row mt -->
+
+
+            <div class="row mt">
+                <!-- SERVER STATUS PANELS -->
+                <div class="col-md-4 col-sm-4 mb">
+                    <div class="white-panel pn donut-chart">
+                        <div class="white-header">
+                            <h5>Tỉ lệ sản phẩm đã kích hoạt</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 goleft">
+                                <p><i class="fa fa-database"></i> @ViewData["ratio"]%</p>
+                            </div>
+                        </div>
+                        <canvas id="serverstatus01" height="120" width="120"></canvas>
+                        <script>
+                            var doughnutData = [
+                                    {
+                                        value: @ViewData["ratio"],
+                                        color: "#68dff0"
+                                    }
+                            ];
+                            var myDoughnut = new Chart(document.getElementById("serverstatus01").getContext("2d")).Doughnut(doughnutData);
+                        </script>
+                    </div><! --/grey-panel -->
+                </div><!-- /col-md-4-->
+
+
+                <div class="col-md-4 col-sm-4 mb">
+                    <div class="white-panel pn">
+                        <div class="white-header">
+                            <h5>Sản phẩm bán chạy nhất</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 goleft">
+                                <p><i class="fa fa-heart"></i> 122</p>
+                            </div>
+                            <div class="col-sm-6 col-xs-6"></div>
+                        </div>
+                        <div class="centered">
+                            <img src="~/Content/img/product.png" width="120">
+                        </div>
+                    </div>
+                </div><!-- /col-md-4 -->
+
+                <div class="col-md-4 mb">
+                    <!-- WHITE PANEL - TOP USER -->
+                    <div class="white-panel pn">
+                        <div class="white-header">
+                            <h5>TOP USER</h5>
+                        </div>
+                        <p><img src="~/Content/img/ui-zac.jpg" class="img-circle" width="80"></p>
+                        <p><b>Zac Snider</b></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="small mt">MEMBER SINCE</p>
+                                <p>2012</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="small mt">TOTAL SPEND</p>
+                                <p>$ 47,60</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /col-md-4 -->
+
+
+            </div><!-- /row -->
+
+
+
+
+        </div><!-- /col-lg-9 END SECTION MIDDLE -->
+        <!-- **********************************************************************************************************************************************************
+        RIGHT SIDEBAR CONTENT
+        *********************************************************************************************************************************************************** -->
+
+        <div class="col-lg-3 ds">
+            <!--COMPLETED ACTIONS DONUTS CHART-->
+            <h3>NOTIFICATIONS</h3>
+
+            <!-- First Action -->
+            <div class="desc">
+                <div class="thumb">
+                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                </div>
+                <div class="details">
+                    <p>
+                        <muted>1 Minutes Ago</muted><br />
+                        <a href="#">Hệ thống</a> Chưa có thông báo mới<br />
+                    </p>
+                </div>
+            </div>
+           
+
+            <!-- USERS ONLINE SECTION -->
+            
+
+       
+
+        </div><!-- /col-lg-3 -->
+    </div><! --/row -->
+</section>

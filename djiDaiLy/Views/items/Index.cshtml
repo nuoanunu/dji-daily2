@@ -1,0 +1,95 @@
+﻿@model IEnumerable<djiDaiLy.Models.item>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.productID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfSold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.warrantyAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tempname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Verified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerType1.GroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.order.MaBill)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_customer.customerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_inventory_name.InventoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tb_product_detail.producFactoryID)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.productID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfSold)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.warrantyAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tempname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerType1.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.order.MaBill)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_customer.customerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_inventory_name.InventoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tb_product_detail.producFactoryID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

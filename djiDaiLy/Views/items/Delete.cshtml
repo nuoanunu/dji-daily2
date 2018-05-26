@@ -1,0 +1,112 @@
+﻿@model djiDaiLy.Models.item
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>item</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.productID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.productID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DateOfSold)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateOfSold)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.warrantyAvailable)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.warrantyAvailable)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tempname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tempname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Verified)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Verified)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CustomerType1.GroupName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CustomerType1.GroupName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.order.MaBill)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.order.MaBill)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tb_customer.customerName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tb_customer.customerName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tb_inventory_name.InventoryName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tb_inventory_name.InventoryName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tb_product_detail.producFactoryID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tb_product_detail.producFactoryID)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

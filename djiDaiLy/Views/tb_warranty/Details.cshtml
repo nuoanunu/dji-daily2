@@ -1,0 +1,82 @@
+﻿@model djiDaiLy.Models.tb_warranty
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>tb_warranty</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.warrantyID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.warrantyID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.startdate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.startdate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.duration)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.duration)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MaChinh)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MaChinh)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Special)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Special)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.item.productID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.item.productID)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

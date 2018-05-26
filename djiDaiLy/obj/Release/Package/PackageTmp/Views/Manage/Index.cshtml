@@ -1,0 +1,74 @@
+﻿@model djiDaiLy.Models.IndexViewModel
+@using Microsoft.AspNet.Identity;
+@using djiDaiLy.Models;
+@{
+    ViewBag.Title = "Manage";
+}
+
+@{ 
+
+    AspNetUser currentUser = new AspNetUser();
+}
+
+@if (ViewData["CurrentUser"] != null) {
+    currentUser = (AspNetUser)ViewData["CurrentUser"];
+}
+<section class="wrapper site-min-height">
+    <h3><i class="fa fa-angle-right"></i> Thông tin tài khoản</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> Danh sách imei</h4>
+                    <section id="no-more-tables">
+                        <table class="table table-bordered table-striped table-condensed cf">
+                            <thead class="cf">
+                                <tr>
+                                    <th> Thông tin</th>
+                                    <th>Chỉnh sửa</th>
+                            
+                                </tr>
+                            </thead>
+                            <tbody>
+                              
+                                    <tr>
+                                        <td>
+                                            Username: @currentUser.Email
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Password
+                                        </td>
+                                        <td>
+                                            <a href="/Manage/ChangePassword" class="btn btn-warning"> Thay đổi</a>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td>
+                                        SDT: @currentUser.PhoneNumber
+                                    </td>
+                                    <td>
+                                        @if (currentUser.PhoneNumber != null)
+                                        {
+                                            <a href="/Manage/AddPhoneNumber" class="btn btn-warning"> Sửa sdt</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Manage/AddPhoneNumber" class="btn btn-warning"> Thêm sdt</a>
+                                        }
+                      
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div><!-- /content-panel -->
+            </div><!-- /col-lg-12 -->
+        </div><!-- /row -->
+
+    
+</section>

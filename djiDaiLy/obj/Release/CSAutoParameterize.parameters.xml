@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:nguyennhat.database.windows.net,1433;Data Source=nguyennhat.database.windows.net;Initial Catalog=ThienNgaDatabase;Persist Security Info=False;User ID=nguyennhat@nguyennhat;Password=320395@qwE;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\daily_dji\\djiDaiLy\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ThienNgaDatabaseEntities-Web.config Connection String" description="ThienNgaDatabaseEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.DJIEntity.csdl|res://*/Models.DJIEntity.ssdl|res://*/Models.DJIEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=nguyennhat.database.windows.net;initial catalog=ThienNgaDatabase;persist security info=True;user id=nguyennhat@nguyennhat;password=320395@qwE;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\daily_dji\\djiDaiLy\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ThienNgaDatabaseEntities']/@connectionString" />
+  </parameter>
+</parameters>
